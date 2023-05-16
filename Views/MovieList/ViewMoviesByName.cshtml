@@ -1,0 +1,36 @@
+﻿@model MovieListObject
+
+<h1 style="color: purple; font-weight:bold;">Here's A Few! </h1>
+
+
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Popularity</th>
+            <th>Overview</th>
+        </tr>
+
+        @foreach (var movie in Model.movies)
+        {
+            <tr>
+                <td>@movie.Id>
+                <td style=" font-weight: bold;">@movie.Title</td>
+                <td>@movie.Popularity</td>
+                <td>@movie.Overview</td>
+            </tr>
+        }
+    
+    </table>
+}
+
+
+
+
+    @*<div class="text-center">
+        <div class="flex-sm-row">
+            <a type="submit" asp-controller="MovieList" asp-action="ViewMoviesByName"></a>
+        </div>
+    </div>*@

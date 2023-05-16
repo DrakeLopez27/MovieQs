@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model MovieListObject
+
+
+<h1 style="color: mediumpurple; font-weight:bold;">Popular Movies</h1>
+
+
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Popularity</th>
+            <th>Overview</th>
+        </tr>
+
+        @foreach (var movie in Model.movies)
+        {
+            <tr>
+                <td>@movie.Id>
+                <td style=" font-weight: bold;">@movie.Title</td>
+                <td>@movie.Popularity</td>
+                <td>@movie.Overview</td>
+            </tr>
+        }
+
+    </table>
+}

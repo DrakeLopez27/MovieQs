@@ -1,0 +1,72 @@
+﻿
+@model MovieListObject
+
+
+<h1 style="color:rebeccapurple; font-weight:bold;"> Search By Name: </h1>
+
+
+
+@using (Html.BeginForm("ViewMoviesByName", "MovieList", "Post"))
+{
+
+    <label asp-for="@Model.movies">Movies</label>
+    <input type="text" name="name" class="form-control"/> 
+
+
+    <input type="submit" value="Search" action="ViewMoviesByName" class="btn-primary" style="background-color:rebeccapurple; color: white"/>
+
+}
+
+
+
+
+@if (Model.movies != null)
+{
+    <div class="text-center">
+        <div class="flex-sm-row">
+           
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+@using (Html.BeginForm("GetMoviesByGenre", "MovieList", "Post"))
+{
+
+    <select name="SelectGenre">
+        <option selected-value="0">---SELECT---</option>
+        @foreach (MyGenre genre in Model)
+        {
+            
+            <option value="@genre.Id">@genre.Name</option>
+
+        }
+    </select>
+
+    <input type="submit" value="@Model" action = "GetMoviesByGenre" class="btn btn-primary" />
+}
+
+
+@*
+  <input asp-for="ProductID" type="hidden" value="@Model.ProductID" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+
+    <label asp-for="Price" class="control-label">Price</label>
+    <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" />
+*@
