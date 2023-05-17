@@ -1,2 +1,2 @@
 # MovieQs
-In this project I intend to allow a user to ask various questions about actors, and movies, or generate a random movie to watch.
+In this project I intend to allow a user to navigate through the web page to generate a random movie selection, or see lists of movies by search, and by popular/trending filters.

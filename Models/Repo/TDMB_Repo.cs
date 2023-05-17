@@ -16,6 +16,7 @@ using TMDbLib.Objects.Genres;
 
 public class TDMB_Repo
 {
+    // Sets up API connection
     TMDbClient client;
     public string apiKey = "3e9eee4e5b5aaeee16b28198f2c7589b";
 
@@ -60,7 +61,7 @@ public class TDMB_Repo
    
    
 
-   // to get list of movies in specific genres available from api
+   // to get list of movies by name available from api
     public List<MyMovie> GetMoviesByName(string movieName)
     {
        
@@ -86,6 +87,7 @@ public class TDMB_Repo
 
     }
 
+    // gets a list of trending movies from api
     public List<MyMovie> GetTrendingMovies()
     {
         SearchContainer<SearchMovie> apiresults = client.GetTrendingMoviesAsync(TMDbLib.Objects.Trending.TimeWindow.Day).Result;
@@ -109,6 +111,7 @@ public class TDMB_Repo
         return movielist;
     }
     
+    // gets list of popular movies from api
     public List<MyMovie> GetPopularMovies()
     {
         SearchContainer<SearchMovie> apiresults = client.GetMoviePopularListAsync().Result;
@@ -136,42 +139,4 @@ public class TDMB_Repo
 
 
 }
-
-
-
-
-
-//public List<MyMovie> GetMoviesByGenre(string genre)
-//{
-//    IEnumerable<int> genreidlist = new List<int>();
-
-//    SearchContainer<SearchMovie> apiresults = client.SearchMovieAsync(genre).Result;
-
-//    List<MyMovie> movielist = new List<MyMovie>();
-
-//    foreach (SearchMovie result in apiresults.Results)
-//    {
-//        MyMovie movie = new MyMovie()
-//        {
-//            Id = result.Id,
-//            Title = result.Title,
-//            Popularity = result.Popularity,
-//            Overview = result.Overview,
-//        };
-
-//        movielist.Add(movie);
-//    }
-
-
-//    return movielist;
-
-//}
-
-
-
-
-
-
-
-
 

@@ -20,3 +20,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbarlogo-d{
+    color: purple !important;
+}
+
+.movieListInput{
+    background-color: rebeccapurple !important;
+    color:white !important;
+}
+
+.pageHeader{
+    color:purple;
+    font-weight: bold;
+}

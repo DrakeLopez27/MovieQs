@@ -24,14 +24,6 @@ namespace MovieQs.Controllers
             return View();
         }
 
-        public IActionResult GetMovie()
-        {
-            var client = new HttpClient();
-            var MoviesURL = "https://api.themoviedb.org/3/discover/movie/?api_key=3e9eee4e5b5aaeee16b28198f2c7589b";
-            var Movies = client.GetStringAsync(MoviesURL).Result;
-
-            return View(Movies);
-        }
 
         public IActionResult ViewMovie()
         {
